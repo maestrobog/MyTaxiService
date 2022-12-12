@@ -24,7 +24,8 @@ public class AddCarController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException, ServletException {
         try {
             String model = req.getParameter("model");
             long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));
@@ -34,7 +35,8 @@ public class AddCarController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/cars");
 
         } catch (Exception e) {
-            req.setAttribute("errorMsg", "can't find manufacturer id : " + Long.parseLong(req.getParameter("manufacturer_id")));
+            req.setAttribute("errorMsg", "can't find manufacturer id : "
+                    + Long.parseLong(req.getParameter("manufacturer_id")));
             req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req,resp);
 
         }
