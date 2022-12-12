@@ -24,12 +24,19 @@ public class AddCarController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String model = req.getParameter("model");
-        long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        Car car = new Car(model, manufacturer);
-        carService.create(car);
-        resp.sendRedirect(req.getContextPath() + "/cars");
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        try {
+            String model = req.getParameter("model");
+            long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));
+            Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+            Car car = new Car(model, manufacturer);
+            carService.create(car);
+            resp.sendRedirect(req.getContextPath() + "/cars");
+
+        } catch (Exception e) {
+            req.setAttribute("errorMsg", "can't find manufacturer id : " + Long.parseLong(req.getParameter("manufacturer_id")));
+            req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req,resp);
+
+        }
     }
 }
