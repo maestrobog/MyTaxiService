@@ -9,8 +9,9 @@
 <body>
 <form method="post" id="redirect"></form>
 <%@include file="header.jsp" %>
-<h1 class="table_dark">Hello</h1>
-<table class="table_dark">
+<h1 class="table_dark"> ---------------------------------------------------------------- </h1>
+<h1 class="table_dark">Hello ${sessionScope.get("driverName")}</h1>
+<table class="table_dark" >
     <tr>
         <th>Redirect to</th>
     </tr>

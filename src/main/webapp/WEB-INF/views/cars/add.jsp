@@ -8,7 +8,6 @@
     <title>Add car</title>
 </head>
 <body>
-<h4 style="color:red">${errorMsg}</h4>
 <form method="post" id="car" action="${pageContext.request.contextPath}/cars/add"></form>
 <h1 class="table_dark">Add car:</h1>
 <table border="1" class="table_dark">
@@ -27,7 +26,8 @@
         <td>
             <input type="submit" name="add" form="car">
         </td>
-    </tr>
+    <tr>
+     <td><h4 style="color:red">${errorMsg}</h4>
 </table>
 </body>
 </html>

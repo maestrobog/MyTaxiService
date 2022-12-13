@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
     <%@include file='/WEB-INF/views/css/table_dark.css' %>
+
 </style>
 <html>
 <head>
     <title>Login page</title>
 </head>
 <body>
-<h4 style="color:red">${errorMsg}</h4>
 <form method="post" id="authenticate" action="${pageContext.request.contextPath}/login"></form>
 <h1 class="table_dark">Login:</h1>
 <table border="1" class="table_dark">
@@ -29,10 +29,10 @@
     </tr>
 </table>
 <table border="1" class="table_dark">
+        <th> <h4 style="color:red">${errorMsg}</h4> </th>
     <tr>
         <th>Or you can register a new driver</th>
     </tr>
-    <tr>
         <td>
             <a href="${pageContext.request.contextPath}/register">Register</a>
         </td>

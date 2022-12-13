@@ -1,25 +1,26 @@
+body {
+    background: url(https://gamerwall.pro/uploads/posts/2022-03/1646734935_4-gamerwall-pro-p-taksi-art-krasivie-oboi-4.png);
+}
 .table_dark {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    width: 70%;
-    color: #7C5FAB;
-    font-size: 40px;
+    font-family: Lucida Console, Courier, monospace;
+    font-size: 20px;
+    width: 800px;
     text-align: center;
     border-collapse: collapse;
-    background: #FEF4AB;
+    background: #eca11e;
     margin: auto;
 }
 .table_dark th {
-    color: #7C5FAB;
-    border-bottom: 1px solid #98E2CA;
-    padding: 12px 17px;
-    font-size: 14px;
+    color: #000000;
+    border-bottom: 3px solid #000000;
+    padding: 17px 17px;
 }
 .table_dark td {
-    color: #7C5FAB;
-    border-bottom: 1px solid #98E2CA;
-    border-right: 1px solid #98E2CA;
-    padding: 7px 17px;
-    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    border-bottom: 5px solid #000000;
+    border-right:5px solid #000000;
+    padding: 10px 17px;
 }
 .table_dark tr:last-child td {
     border-bottom: none;

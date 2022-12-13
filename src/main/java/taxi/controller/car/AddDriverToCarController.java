@@ -35,9 +35,9 @@ public class AddDriverToCarController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/cars/drivers");
 
         } catch (Exception e) {
-            req.setAttribute("errorMsg", "Non correct value : Driver ID: "
+            req.setAttribute("errorMsg", "Non correct value = Driver ID: "
                         + Long.parseLong(req.getParameter("driver_id"))
-                    + " Car ID: " + Long.parseLong(req.getParameter("car_id")));
+                    + "Car ID: " + Long.parseLong(req.getParameter("car_id")));
             req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req,resp);
         }
     }
