@@ -1,5 +1,7 @@
 package taxi.controller.login;
 
+import static taxi.lib.InjectorUtils.taxiInstance;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,7 @@ import taxi.model.Driver;
 import taxi.service.AuthenticationService;
 
 public class LoginController extends HttpServlet {
-    private static Injector injector = Injector.getInstance("taxi");
+    private static Injector injector = taxiInstance().getInstance("taxi");
     private static AuthenticationService authenticationService = (AuthenticationService) injector
             .getInstance(AuthenticationService.class);
 

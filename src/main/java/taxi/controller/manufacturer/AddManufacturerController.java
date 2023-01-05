@@ -1,17 +1,17 @@
 package taxi.controller.manufacturer;
 
+import static taxi.lib.InjectorUtils.taxiInstance;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import taxi.lib.Injector;
 import taxi.model.Manufacturer;
 import taxi.service.ManufacturerService;
 
 public class AddManufacturerController extends HttpServlet {
-    private static final Injector injector = Injector.getInstance("taxi");
-    private final ManufacturerService manufacturerService = (ManufacturerService) injector
+    private final ManufacturerService manufacturerService = (ManufacturerService) taxiInstance()
             .getInstance(ManufacturerService.class);
 
     @Override
